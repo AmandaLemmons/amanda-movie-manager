@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'movies#index'
+  root 'movies#dashboard'
 
-  get 'movies/new'
+  get 'movies/index'=> 'movies#index', as: :index
+
+  get 'movies/new' => 'movies#new', as: :new
+
+  post '/movies' => 'movies#create', as: :movies
 
   get 'movies/update'
 
