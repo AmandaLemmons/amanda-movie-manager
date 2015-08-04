@@ -9,7 +9,7 @@ Here is a list of all the movies
   <br>
   <%= movie.format %>
   <br>
-  Length of Movie in hh:mm:ss 
+  Length of Movie in hh:mm:ss
   <%= Time.at(movie.length).utc.strftime("%H:%M:%S") %>
   <br>
   <%= movie.release_year %>
@@ -17,5 +17,6 @@ Here is a list of all the movies
   <%=movie.rating %>
   <br>
 
+  <%= link_to "Delete this movie", delete_path(id: movie.id), :method => :delete %>
 
 <% end %>
