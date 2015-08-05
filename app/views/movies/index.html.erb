@@ -1,38 +1,34 @@
-<div class="container index">
+<div class="container movie-index">
   <div class="col-md-12">
-    <h1> Here is a list of all the movies </h1>
-    <%= link_to "Add a new movie", new_path, class:"btn btn-default", remote: true %>
-    <table class="table table-hover table-responsive table-bordered">
-      <caption>Movies</caption>
-          <thead>
-            <tr>
-              <th> <%= sort_by 'title', title: 'Movie Title', current_column: @sort_column %> </th>
-              <th><%= sort_by 'format', title: 'Movie Format ', current_column: @sort_column %>  </th>
-              <th><%= sort_by 'length', title: 'Length of Movie', current_column: @sort_column %>  </th>
-              <th><%= sort_by 'release_year', title: 'Release Year', current_column: @sort_column %>  </th>
-              <th><%= sort_by 'rating', title: 'Rating', current_column: @sort_column %>   </th>
-              <th> Delete </th>
-              <th> Edit </th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @movies.each do |movie| %>
-            <tr>
-              <td><%=movie.title%> </td>
-              <td><%= movie.format %> </td>
-              <td><%= Time.at((60)*(movie.length)).utc.strftime("%H:%M:%S") %> </td>
-              <td><%= movie.release_year %> </td>
-              <td><%=movie.rating %> </td>
-              <td> <%= link_to "Delete this movie", delete_path(id: movie.id), :method => :delete %> </td>
-              <td>   <%= link_to "Edit this movie", edit_path(id: movie.id), remote: true %> </td>
-            </tr>
-            <% end %>
-          </tbody>
-    </table>
+    <div class="pull-right">
+      <%= link_to "Add a new movie", new_path, class:"btn btn-default add-movie", remote: true %>
+    </div>
+    <h3> There are <%= @movies.count %> movies saved </h3>
+      <div class="movie-table">
+        <table class="table table-hover table-responsive table-bordered">
+          <caption>Movies</caption>
+              <thead>
+                <tr>
+                  <th> <%= sort_by 'title', title: 'Movie Title', current_column: @sort_column %> </th>
+                  <th><%= sort_by 'format', title: 'Movie Format ', current_column: @sort_column %>  </th>
+                  <th><%= sort_by 'length', title: 'Length of Movie', current_column: @sort_column %>  </th>
+                  <th><%= sort_by 'release_year', title: 'Release Year', current_column: @sort_column %>  </th>
+                  <th><%= sort_by 'rating', title: 'Rating', current_column: @sort_column %>   </th>
+                  <th> Delete </th>
+                  <th> Edit </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @movies.each do |movie| %>
+                <tr data-movie-id="<%= movie.id %>">
+                  <%= render partial: 'movie_row', locals: {movie: movie} %>
+                </tr>
+                <% end %>
+              </tbody>
+        </table>
 
-
-
-        </div> <!--media-->
+      </div>
+      </div> <!--media-->
     </div> <!-- row -->
   </div> <!-- col-md-12-->
 </div>

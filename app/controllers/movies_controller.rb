@@ -58,7 +58,7 @@ end
   def destroy
     @movie = Movie.find params[:id]
     @movie.destroy
-    redirect_to index_path
+     
   end
 
 end
