@@ -17,6 +17,9 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
 }
+h3 {
+  text-align: center;
+}
 
 body {
   background: image-url("oz.jpg")no-repeat center center fixed;
@@ -40,10 +43,6 @@ body {
 
 .movie-index {
   padding-top: 50px;
-}
-
-.form-control {
-  width: 50%;
 }
 
 .pull-right{

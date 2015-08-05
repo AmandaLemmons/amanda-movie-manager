@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
-  # use_doorkeeper
   root 'movies#dashboard'
-
-  # get 'users/rails' => 'users#rails'
-  # get 'users/generate' => 'users#generate'
-  # get 'users/doorkeeper:migration' => 'users#doorkeeper:migration'
 
   get '/signup' => 'users#new', as: :signup
   post '/users' => 'users#create', as: :users
-
 
   get '/login' => 'sessions#new', as: :login
   post '/auth' => 'sessions#create', as: :auth
@@ -22,7 +16,7 @@ Rails.application.routes.draw do
   delete '/movies/:id' => 'movies#destroy', as: :delete
   get 'movies/:id/edit' => 'movies#edit', as: :edit
 
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

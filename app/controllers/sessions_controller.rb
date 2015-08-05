@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+
   def create
     email = params[:email]
     password = params[:password]
@@ -20,7 +21,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete :user_id
-    redirect_to login_path
+    redirect_to index_path
   end
-
 end
