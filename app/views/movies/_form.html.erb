@@ -1,9 +1,10 @@
-<%= simple_form_for @movie do |f| %>
- <%= f.input :title, label: false, placeholder:"Title" %>
- <%= f.input :format, label: false, collection: [:VHS, :DVD, :Streaming], placeholder: "Video Format" %>
- <%= f.input :length, label: false, placeholder: "Length of Movie in seconds" %>
- <%= f.input :release_year, label: false, placeholder:"Year Released" %>
- <%= f.input :rating, :collection => 1..5, :as => :radio_buttons, placeholder:"Rating of Movie" %>
-
- <%= f.button :submit, class:"login-btn"  %>
- <%end %>
+<div class="container">
+  <%= simple_form_for @movie do |f| %>
+   <%= f.input :title, label: false, placeholder:"Title" %>
+   <%= f.input :format, label: false, collection: [:VHS, :DVD, :Streaming], placeholder: "Video Format" %>
+   <%= f.input :length, label: false, placeholder: "Length of Movie in minutes" %>
+   <%= f.input :release_year, label: false, placeholder:"Year Released" %>
+   <%= f.input :rating, :collection => 1..5, :as => :radio_buttons, placeholder:"Rating of Movie" %>
+   <%= f.button :submit, class:"login-btn"  %>
+  <%end %>
+ </div>

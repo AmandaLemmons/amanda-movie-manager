@@ -1,3 +1,32 @@
-// Place all the styles related to the movies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.landing {
+  background: image-url("movie.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100vh;
+.landing_title {
+  height: 100%;
+  padding-top: 200px;
+  text-align: center;
+  font-family: 'Lustria', serif;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+  }
+}
+
+.button {
+  background-color: #AC2832;
+  font-family: 'Lato', sans-serif;
+  color: #DFD297;
+  font-size: 20px;
+  border: none;
+}
+.button:hover {
+  background-color: #000000;
+  color: #AC2832;
+}
