@@ -5,6 +5,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @sort_column = sort_column
+    @movies = Movie.order(@sort_column.order)
   end
 
   def new
@@ -34,6 +36,24 @@ class MoviesController < ApplicationController
       render :edit
     end
   end
+
+  def sort_column
+  title_sort = SortableTable::SortColumnCustomDefinition.new('title',
+    asc: 'title asc',
+    desc: 'title desc')
+
+  release_year_sort = SortableTable::SortColumnDefinition.new('release_year')
+
+  format_sort = SortableTable::SortColumnDefinition.new('format')
+
+  length_sort = SortableTable::SortColumnDefinition.new('length')
+
+  rating_sort = SortableTable::SortColumnDefinition.new('rating')
+
+  sort_table = SortableTable::SortTable.new([title_sort, release_year_sort, format_sort, length_sort, rating_sort])
+  sort_table.sort_column(params[:sort], params[:direction])
+end
+
 
   def destroy
     @movie = Movie.find params[:id]

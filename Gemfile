@@ -3,6 +3,7 @@ ruby '2.2.2'
 
 gem 'bootstrap-sass'
 gem 'simple_form', '3.1'
+gem 'sortable-table', '~> 0.1.0'
 
 
 

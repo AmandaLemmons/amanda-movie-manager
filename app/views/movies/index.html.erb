@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container index">
   <div class="col-md-12">
     <h1> Here is a list of all the movies </h1>
     <%= link_to "Add a new movie", new_path, class:"btn btn-default" %>
-    <table class="table">
+    <table class="table table-hover table-responsive table-bordered">
       <caption>Movies</caption>
           <thead>
             <tr>
-              <th> Movie Title </th>
-              <th> Movie Format </th>
-              <th> Length of Movie </th>
-              <th> Release Year </th>
-              <th> Rating </th>
+              <th> <%= sort_by 'title', title: 'Movie Title', current_column: @sort_column %> </th>
+              <th><%= sort_by 'format', title: 'Movie Format ', current_column: @sort_column %>  </th>
+              <th><%= sort_by 'length', title: 'Length of Movie', current_column: @sort_column %>  </th>
+              <th><%= sort_by 'release_year', title: 'Release Year', current_column: @sort_column %>  </th>
+              <th><%= sort_by 'rating', title: 'Rating', current_column: @sort_column %>   </th>
               <th> Delete </th>
               <th> Edit </th>
             </tr>
