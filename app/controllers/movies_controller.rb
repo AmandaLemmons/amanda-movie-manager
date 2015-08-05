@@ -3,6 +3,10 @@ class MoviesController < ApplicationController
   def dashboard
   end
 
+  def index
+    @movies = Movie.all
+  end
+
   def new
     @movie = Movie.new
   end
@@ -13,18 +17,22 @@ class MoviesController < ApplicationController
     redirect_to index_path
   end
 
-  def index
-    @movies = Movie.all
-  end
-
-  def update
-  end
-
   def show
     @movie = Movie.find params[:id]
   end
 
   def edit
+    @movie = Movie.find params[:id]
+  end
+
+
+  def update
+    @movie = Movie.find params[:id]
+    if @movie.update params.require(:movie).permit(:title, :release_year, :format,  :length, :rating)
+      redirect_to index_path
+    else
+      render :edit
+    end
   end
 
   def destroy

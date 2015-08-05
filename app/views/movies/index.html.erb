@@ -5,7 +5,7 @@ Here is a list of all the movies
 
 <% @movies.each do |movie| %>
   <br>
-  <%= link_to "#{movie.title}", show_path(id: movie.id) %>
+  <%= link_to "#{movie.title}", movie_path(id: movie.id) %>
   <br>
   <%= movie.format %>
   <br>
@@ -18,5 +18,5 @@ Here is a list of all the movies
   <br>
 
   <%= link_to "Delete this movie", delete_path(id: movie.id), :method => :delete %>
-
+  <%= link_to "Edit this movie", edit_path(id: movie.id) %>
 <% end %>
