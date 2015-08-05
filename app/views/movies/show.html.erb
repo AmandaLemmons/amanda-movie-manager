@@ -1,2 +1,11 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<%= @movie.title %>
+<br>
+<%= @movie.format %>
+<br>
+Length of Movie in hh:mm:ss
+<%= Time.at(@movie.length).utc.strftime("%H:%M:%S") %>
+<br>
+<%= @movie.release_year %>
+<br>
+<%=@movie.rating %>
+<br>

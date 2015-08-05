@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'movies/update'
 
-  get 'movies/show'
+  get 'movies/:id' => 'movies#show', as: :show
 
   get 'movies/edit'
 

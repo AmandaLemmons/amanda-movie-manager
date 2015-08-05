@@ -5,7 +5,7 @@ Here is a list of all the movies
 
 <% @movies.each do |movie| %>
   <br>
-  <%= movie.title %>
+  <%= link_to "#{movie.title}", show_path(id: movie.id) %>
   <br>
   <%= movie.format %>
   <br>
