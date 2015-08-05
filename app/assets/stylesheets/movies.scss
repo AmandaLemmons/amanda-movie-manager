@@ -15,14 +15,21 @@
     font-weight: bold;
     color: #FFFFFF;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
   }
+}
+
+body {
+  background: image-url("oz.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100vh;
 }
 
 .button {
   background-color: #AC2832;
   font-family: 'Lato', sans-serif;
-  color: #DFD297;
+  color: black;
   font-size: 20px;
   border: none;
 }
@@ -40,5 +47,59 @@
 }
 
 .pull-right{
-  margin-top: 30px;
+  margin-top: 10px;
+}
+.navbar-default {
+  background-color: lighten(#000000, 80%);
+  opacity: 0.6;
+.navbar-brand{
+  font-family: 'Lustria', serif;
+  color: darken(#AC2832, 20%);
+  font-size: 20px;
+  font-weight: bolder;
+  }
+  .navbar-nav li a {
+    color: darken(#AC2832, 20%);
+    font-family: 'Lustria', serif;
+    font-size: 20px;
+    font-weight: bolder;
+
+  }
+}
+
+.movie-table {
+  background-color: lighten(#000000, 80%);
+  opacity: 0.8;
+  padding-top: 10px;
+  margin-top: 75px;
+  text-align: center;
+  h3 {
+    font-family: 'Lato', sans-serif;
+    color: #282827;
+  }
+  td {
+    font-family: 'Lato', sans-serif;
+    color: #282827;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  th a{
+    font-family: 'Lustria', serif;
+    color: darken(#AC2832, 20%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  th {
+    font-family: 'Lustria', serif;
+    color: darken(#AC2832, 20%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.btn-default{
+  background: #DFD297;
+  margin-bottom: 10px;
 }

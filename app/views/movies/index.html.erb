@@ -1,23 +1,25 @@
 <div class="container movie-index">
   <div class="col-md-12">
-    <div class="pull-right">
-      <%= link_to "Add a new movie", new_path, class:"btn btn-default add-movie", remote: true %>
-    </div>
-    <h3> There are <%= @movies.count %> movies saved </h3>
+    <% if @current_user.nil? %>
+    <% else %>
+      <h3> Hello <%= @current_user.username %>
+    <% end %>
       <div class="movie-table">
         <table class="table table-hover table-responsive table-bordered">
-          <caption>Movies</caption>
               <thead>
+                  <h3> There are <%= @movies.count %> movies saved </h3>
+                  <%= link_to "Add a new movie", new_path, class:"btn btn-default add-movie", remote: true %>
+              </thead>
                 <tr>
-                  <th> <%= sort_by 'title', title: 'Movie Title', current_column: @sort_column %> </th>
-                  <th><%= sort_by 'format', title: 'Movie Format ', current_column: @sort_column %>  </th>
-                  <th><%= sort_by 'length', title: 'Length of Movie', current_column: @sort_column %>  </th>
+                  <th> <%= sort_by 'title', title: 'Title', current_column: @sort_column %> </th>
+                  <th><%= sort_by 'format', title: 'Format ', current_column: @sort_column %>  </th>
+                  <th><%= sort_by 'length', title: 'Length', current_column: @sort_column %>  </th>
                   <th><%= sort_by 'release_year', title: 'Release Year', current_column: @sort_column %>  </th>
                   <th><%= sort_by 'rating', title: 'Rating', current_column: @sort_column %>   </th>
                   <th> Delete </th>
                   <th> Edit </th>
                 </tr>
-              </thead>
+
               <tbody>
                 <% @movies.each do |movie| %>
                 <tr data-movie-id="<%= movie.id %>">

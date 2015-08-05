@@ -4,7 +4,7 @@ ruby '2.2.2'
 gem 'bootstrap-sass'
 gem 'simple_form', '3.1'
 gem 'sortable-table', '~> 0.1.0'
-
+gem 'doorkeeper'
 
 
 
@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
