@@ -2,27 +2,35 @@
   <div class="col-md-12">
     <h1> Here is a list of all the movies </h1>
     <%= link_to "Add a new movie", new_path, class:"btn btn-default" %>
-    <div class="row">
-      <% @movies.each do |movie| %>
-        <br>
-        <div class="col-md-4">
-        <div class="media">
-        <div class="media-body">
-          <h3 class="media-heading">
-            Title: <%= link_to "#{movie.title}", movie_path(id: movie.id) %> </h3>
-        </div> <!-- div media body -->
-        <div >
-            <p>Movie Format: <%= movie.format %> </p>
-            <p> Length of Movie: <%= Time.at((60)*(movie.length)).utc.strftime("%H:%M:%S") %> </p>
-        </div> <!--div -->
-        <div >
-            <p> Release Year: <%= movie.release_year %> </p>
-            <p> Rating: <%=movie.rating %> </p>
-        </div> <!--div  -->
-            <%= link_to "Delete this movie", delete_path(id: movie.id), :method => :delete, class:"btn btn-default" %>
-            <%= link_to "Edit this movie", edit_path(id: movie.id), class:"btn btn-default" %>
-            <br>
-          <% end %>
+    <table class="table">
+      <caption>Movies</caption>
+          <thead>
+            <tr>
+              <th> Movie Title </th>
+              <th> Movie Format </th>
+              <th> Length of Movie </th>
+              <th> Release Year </th>
+              <th> Rating </th>
+              <th> Delete </th>
+              <th> Edit </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @movies.each do |movie| %>
+            <tr>
+              <td><%=movie.title%> </td>
+              <td><%= movie.format %> </td>
+              <td><%= Time.at((60)*(movie.length)).utc.strftime("%H:%M:%S") %> </td>
+              <td><%= movie.release_year %> </td>
+              <td><%=movie.rating %> </td>
+              <td> <%= link_to "Delete this movie", delete_path(id: movie.id), :method => :delete %> </td>
+              <td>   <%= link_to "Edit this movie", edit_path(id: movie.id) %> </td>
+            </tr>
+            <% end %>
+          </tbody>
+    </table>
+
+
 
         </div> <!--media-->
     </div> <!-- row -->
