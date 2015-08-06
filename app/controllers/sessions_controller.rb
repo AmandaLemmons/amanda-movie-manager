@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
 
 
   def create
-    user = User.new
-    auth = request.env["omniauth.auth"]
-    session[:omniauth] = auth
-    user = User.new.sign_in_from_facebook(auth)
-    session[:user_id] = user.id
-    redirect_to index_path
+    # user = User.new
+    # auth = request.env["omniauth.auth"]
+    # session[:omniauth] = auth
+    # user = User.new.sign_in_from_facebook(auth)
+    # session[:user_id] = user.id
+    # redirect_to index_path
 
 
     email = params[:email]
