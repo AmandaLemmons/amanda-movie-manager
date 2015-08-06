@@ -4,11 +4,11 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
   validates :password_confirmation, presence: true
-
+  
   # def self.sign_in_from_facebook(auth)
   #   find_by(provider: auth['provider'], uid: auth['uid'] ) || create_user_from_facebook(auth)
   # end
-
+  #
   # def self.create_user_from_facebook(auth)
   #   create(
   #   email: auth['info']['email'],

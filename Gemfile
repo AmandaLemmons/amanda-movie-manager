@@ -6,7 +6,8 @@ gem 'simple_form', '3.1'
 gem 'sortable-table', '~> 0.1.0'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
-
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-google-oauth2'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
