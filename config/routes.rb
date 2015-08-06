@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'movies#dashboard'
 
-  get '/signup' => 'users#new', as: :signup
-  post '/users' => 'users#create', as: :users
+   get '/signup' => 'users#new', as: :signup
+   post '/users' => 'users#create', as: :users
 
+  # get '/movies/auth/facebook' => 'sessions#create'
   get '/login' => 'sessions#new', as: :login
   post '/auth' => 'sessions#create', as: :auth
   get '/logout' => 'sessions#destroy', as: :logout
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   delete '/movies/:id' => 'movies#destroy', as: :delete
   get 'movies/:id/edit' => 'movies#edit', as: :edit
 
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

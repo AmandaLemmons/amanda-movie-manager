@@ -1,13 +1,13 @@
 <div class="container movie-index">
   <div class="col-md-12">
-    <% if @current_user.nil? %>
-    <% else %>
-      <h3> Hello <%= @current_user.username %>
-    <% end %>
       <div class="movie-table">
-        <table class="table table-hover table-responsive table-bordered">
+        <div class="table-responsive">
+        <table class="table table-hover table-bordered table-condensed">
               <thead>
-                  <h3> There are <%= @movies.count %> movies saved </h3>
+                <% if @current_user.nil? %>
+                <% else %>
+                  <h3> Hello <%= @current_user.username %>! You have <%= @movies.count %> movies saved </h3>
+                <% end %>
                   <%= link_to "Add a new movie", new_path, class:"btn btn-default add-movie", remote: true %>
               </thead>
                 <tr>
@@ -28,6 +28,7 @@
                 <% end %>
               </tbody>
         </table>
+      </div>
 
       </div>
       </div> <!--media-->
