@@ -27,9 +27,9 @@ class SessionsController < ApplicationController
   end
 
 
+
   def destroy
-  session[:user_id]= nil
-  session[:omniauth] = nil
-  redirect_to index_path
+      session.delete :user_id
+      redirect_to index_path
   end
 end
